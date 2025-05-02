@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detected Errors - Error Detector</title>
+    <link rel="stylesheet" href="Display.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Error Detector Results</h1>
+            <p>Comprehensive error report for your webpage</p>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number" id="totalErrors">0</div>
+                <div class="stat-label">Total Errors</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="highSeverity">0</div>
+                <div class="stat-label">High Severity</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="mediumSeverity">0</div>
+                <div class="stat-label">Medium Severity</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="lowSeverity">0</div>
+                <div class="stat-label">Low Severity</div>
+            </div>
+        </div>
+
+        <div class="errors-container" id="errorsContainer">
+            <!-- Errors will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="Display.js"></script>
+</body>
+</html>

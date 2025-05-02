@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="Register.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="register-container">
+        <form id="registerForm" class="register-form">
+            <h2>Register</h2>
+            <div class="inputbox">
+                <input type="text" id="userName" name="userName" required />
+                <label for="userName">Username</label>
+                <div class="error-message"></div>
+            </div>
+            <div class="inputbox">
+                <input type="email" id="email" name="email" required />
+                <label for="email">Email</label>
+                <div class="error-message"></div>
+            </div>
+            <div class="inputbox">
+                <input type="password" id="password" name="password" required />
+                <span class="password-toggle" id="passwordToggle">
+                    <ion-icon name="eye-outline"></ion-icon>
+                </span>
+                <label for="password">Password</label>
+                <div class="error-message"></div>
+            </div>
+            <button type="submit" id="registerBtn">Register</button>
+        </form>
+    </div>
+    <script src="Register.js"></script>
+</body>
+</html>

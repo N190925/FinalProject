@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Log-in</title>
+    <link rel="icon" type="image/png" href="Logo1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+<selection>
+    <div class="reg">
+        <div class="form">
+            <form id="loginForm">
+                <div>
+                    <h2>Log-In Form</h2>
+                </div>
+                
+                <!-- Email Input -->
+                <div class="inputbox">
+                    <input 
+                        type="text" 
+                        id="email" 
+                        name="email" 
+                        required
+                    />
+                    <label for="email">Email Address</label>
+                    <div class="validation-feedback">
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+
+                <!-- Password Input -->
+                <div class="inputbox">
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        required
+                    />
+                    <span class="password-toggle" id="passwordToggle">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </span>
+                    <label for="password">Password</label>
+                    <div class="validation-feedback">
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+
+                <!-- Remember Me -->
+                <div class="remember">
+                    <h3>
+                        <input 
+                            type="checkbox" 
+                            id="rememberMe" 
+                            name="rememberMe"
+                        />
+                        <label for="rememberMe">Remember Me</label>
+                    </h3>
+                </div>
+
+                <!-- Submit Button -->
+                <button 
+                    type="submit" 
+                    id="log_in"
+                >
+                    Log In
+                </button>
+                
+                <!-- Registration Link -->
+                <div class="register">
+                    <p>
+                        <a href="Register.html">Not Registered?</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="Login.js"></script>
+</selection>
+</body>
+</html>

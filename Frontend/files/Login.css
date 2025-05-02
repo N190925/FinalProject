@@ -1,0 +1,319 @@
+/* Base font settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Layout */
+selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url('grad1.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Form Container */
+.form {
+    position: relative;
+    width: 400px;
+    background: #e6f3ff;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #b8d8ff;
+}
+
+/* Form Header */
+h2 {
+    font-size: 2em;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Input Boxes */
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    width: 100%;
+    border-bottom: 2px solid #000000;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #000000;
+    font-size: 0.95em;
+    pointer-events: none;
+    transition: .5s;
+    font-weight: 300;
+}
+
+/* Input Focus Effects */
+.inputbox input:focus ~ label,
+.inputbox input:valid ~ label {
+    top: -5px;
+    font-size: 0.85em;
+    color: #000000;
+    font-weight: 400;
+}
+
+/* Updated Password Toggle Styles */
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+    color: #000000;
+}
+
+.password-toggle:hover {
+    opacity: 0.7;
+}
+
+.password-toggle ion-icon {
+    font-size: 1.2em;
+}
+
+/* Remember Me Checkbox */
+.remember {
+    margin: 15px 0;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+}
+
+.remember input {
+    margin-right: 3px;
+    accent-color: #000000;
+}
+
+.remember label {
+    font-size: 0.9em;
+    margin-left: 5px;
+}
+
+/* Login Button */
+#log_in {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: 1px solid #000000;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    color: #000000;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+#log_in:hover {
+    background: #1a75ff;
+    color: #ffffff;
+    border-color: #1a75ff;
+}
+
+/* Register Link */
+.register {
+    font-size: 0.9em;
+    color: #000000;
+    text-align: center;
+    margin: 25px 0 10px;
+    font-weight: 400;
+}
+
+.register p a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.register p a:hover {
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* Validation Feedback */
+.error-message {
+    color: #ff3333;
+    font-size: 0.8em;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+/* Error States */
+.inputbox.error {
+    border-bottom-color: #ff3333;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .form {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* Base Responsive Settings */
+:root {
+    --form-width: min(400px, 90%);
+    --input-height: 44px; /* Minimum touch target size */
+    --button-height: 44px;
+}
+
+/* Device Compatibility */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    touch-action: manipulation;
+}
+
+body {
+    min-height: -webkit-fill-available;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Form Responsiveness */
+.form {
+    width: var(--form-width);
+    padding: clamp(20px, 5vw, 40px);
+    margin: 15px;
+}
+
+/* Input Adjustments */
+.inputbox input {
+    height: var(--input-height);
+    font-size: clamp(14px, 3vw, 16px);
+    padding: 0 44px 0 12px; /* Increased touch areas */
+}
+
+/* Button Adjustments */
+button {
+    height: var(--button-height);
+    min-width: 44px; /* Minimum touch target size */
+}
+
+/* Media Queries */
+/* Mobile Phones */
+@media screen and (max-width: 480px) {
+    .form {
+        width: 95%;
+        margin: 10px;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .inputbox {
+        margin: 20px 0;
+    }
+
+    .password-toggle {
+        padding: 10px; /* Larger touch target */
+    }
+}
+
+/* Tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .form {
+        width: 80%;
+        max-width: 500px;
+    }
+}
+
+/* Laptops and Small Desktops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .form {
+        width: 60%;
+        max-width: 600px;
+    }
+}
+
+/* Large Desktops */
+@media screen and (min-width: 1025px) {
+    .form {
+        width: 400px;
+    }
+}
+
+/* Device-specific adjustments */
+/* iOS devices */
+@supports (-webkit-touch-callout: none) {
+    body {
+        min-height: -webkit-fill-available;
+    }
+
+    input, button {
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    /* Add dark mode styles if needed */
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    /* Add high contrast styles if needed */
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .form {
+        box-shadow: none;
+    }
+    
+    button {
+        display: none;
+    }
+}

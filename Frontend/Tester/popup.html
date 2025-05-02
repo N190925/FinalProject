@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Validation and Input Popup</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Input Section (shown first) -->
+    <div id="input-section">
+      <h3>Encrypted String</h3>
+      <textarea id="inputText" rows="4" placeholder="Enter your encrypted string..."></textarea>
+      <button id="submitButton" class="submit-button">Submit</button>
+    </div>
+
+    <!-- Validation Results Section (hidden initially) -->
+    <div id="validation-section" style="display:none;">
+      <h3>Error Detector</h3>
+      <div id="error-message"></div>
+      <div id="results" class="no-error">Checking for errors...</div>
+      <div class="slider-container">
+        <div class="navigation-controls">
+          <button id="prevError" class="nav-button" disabled>←</button>
+          <span class="error-counter">1 out of 0</span>
+          <button id="nextError" class="nav-button" disabled>→</button>
+        </div>
+      </div>
+      <button id="showAllErrors" class="rerun-button">Click Here</button>
+      <div id="loadingIndicator" class="loading-indicator">
+        <span class="spinner"></span>
+      </div>
+    </div>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

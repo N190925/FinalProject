@@ -1,0 +1,247 @@
+/* Base font settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f5f6fa;
+    min-height: -webkit-fill-available;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.register-form {
+    position: relative;
+    width: 400px;
+    background: #e6f3ff;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #b8d8ff;
+}
+
+h2 {
+    font-size: 2em;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    width: 100%;
+    border-bottom: 2px solid #000000;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #000000;
+    font-size: 0.95em;
+    pointer-events: none;
+    transition: .5s;
+    font-weight: 300;
+}
+
+.inputbox input:focus ~ label,
+.inputbox input:valid ~ label {
+    top: -5px;
+    font-size: 0.85em;
+    color: #000000;
+    font-weight: 400;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+    color: #000000;
+}
+
+.password-toggle:hover {
+    opacity: 0.7;
+}
+
+.password-toggle ion-icon {
+    font-size: 1.2em;
+}
+
+button[type="submit"] {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: 1px solid #000000;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    color: #000000;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #1a75ff;
+    color: #ffffff;
+    border-color: #1a75ff;
+}
+
+/* Validation Feedback */
+.error-message {
+    color: #ff3333;
+    font-size: 0.8em;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+/* Error States */
+.inputbox.error {
+    border-bottom-color: #ff3333;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .register-form {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+}
+
+:root {
+    --form-width: min(400px, 90%);
+    --input-height: 44px;
+    --button-height: 44px;
+}
+
+.register-form {
+    width: var(--form-width);
+    padding: clamp(20px, 5vw, 40px);
+    margin: 15px;
+}
+
+.inputbox input {
+    height: var(--input-height);
+    font-size: clamp(14px, 3vw, 16px);
+    padding: 0 44px 0 12px;
+}
+
+button {
+    height: var(--button-height);
+    min-width: 44px;
+}
+
+@media screen and (max-width: 480px) {
+    .register-form {
+        width: 95%;
+        margin: 10px;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .inputbox {
+        margin: 20px 0;
+    }
+
+    .password-toggle {
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .register-form {
+        width: 80%;
+        max-width: 500px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .register-form {
+        width: 60%;
+        max-width: 600px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .register-form {
+        width: 400px;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+    body {
+        min-height: -webkit-fill-available;
+    }
+
+    input, button {
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    /* Add dark mode styles if needed */
+}
+
+@media (prefers-contrast: high) {
+    /* Add high contrast styles if needed */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media print {
+    .register-form {
+        box-shadow: none;
+    }
+    
+    button {
+        display: none;
+    }
+}

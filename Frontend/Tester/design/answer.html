@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solution Page</title>
+  <link rel="stylesheet" href="answer.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="split-container" id="splitContainer">
+    <div class="left-panel" id="leftPanel">
+      <header>
+        <h1>Solution Center</h1>
+      </header>
+      <main>
+        <h2 id="errorType"></h2>
+        <p id="errorMessage"></p>
+        <p><strong>Suggestion:</strong> <span id="errorSuggestion"></span></p>
+        <pre id="errorCode" class="code-block"></pre>
+
+        <div class="button-group">
+          <button id="stackoverflowBtn">Find Solution on Stack Overflow</button>
+          <button id="tryValidatorBtn">Try Web Validator</button>
+        </div>
+      </main>
+      <footer>
+        <p>&copy; By Error Detector</p>
+      </footer>
+    </div>
+
+    <div class="right-panel" id="rightPanel">
+      <div class="qr-section">
+        <button id="closeQrBtn" style="position:absolute;top:20px;right:30px;font-size:22px;background:none;border:none;cursor:pointer;z-index:2;display:none;">&times;</button>
+        <img id="qrImage" src="qr image.jpeg" alt="QR Static"/>
+        <div id="qrContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="answer.js"></script>
+</body>
+</html>

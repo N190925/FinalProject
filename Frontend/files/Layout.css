@@ -1,0 +1,955 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Tilt Prism;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #538392;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+/* Navigation Styles */
+header {
+    background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+    padding: 20px 0;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px 40px;
+    border-radius: 30px;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+    position: relative;
+}
+
+/* Logo styling */
+.logo {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Logo text styling */
+#c {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 5px;
+    color: #fceb04;
+    animation: glowEffect 2s ease-in-out infinite;
+}
+
+#s {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 5px;
+    color: #ffffff;
+    position: relative;
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Error Icon Styling */
+.error-icon {
+    color: #fceb04;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 25px;
+    top: 0;
+}
+
+/* Jump animation on hover */
+.logo:hover .error-icon {
+    animation: jumpForward 0.6s ease-out forwards;
+}
+
+/* Return animation when hover ends */
+.logo:not(:hover) .error-icon {
+    animation: jumpBack 0.6s ease-out forwards;
+}
+
+/* Slide in animation for 'Detector' */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Forward jump animation for icon */
+@keyframes jumpForward {
+    0% {
+        left: 25px;
+        top: 0;
+    }
+    50% {
+        left: 40px;
+        top: -20px;
+    }
+    100% {
+        left: 55px;
+        top: 0;
+    }
+}
+
+/* Backward jump animation for icon */
+@keyframes jumpBack {
+    0% {
+        left: 55px;
+        top: 0;
+    }
+    50% {
+        left: 40px;
+        top: -20px;
+    }
+    100% {
+        left: 25px;
+        top: 0;
+    }
+}
+
+/* Letter spacing for Detector */
+#s {
+    letter-spacing: 2px;
+}
+
+/* Hover effect for entire logo */
+.logo:hover #c {
+    animation: glowEffect 1s ease-in-out infinite;
+}
+
+.logo:hover #s {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+/* Navigation Links */
+.navbar .links {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 100px;
+    padding: 0;
+}
+
+.navbar .links li {
+    list-style: none;
+    position: relative;
+    padding: 0 1.5rem;
+}
+
+.navbar .links li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    position: relative;
+    transition: all 0.3s ease;
+    background: transparent;
+    border-radius: 30px;
+    z-index: 1;
+}
+
+/* Hover effect for links */
+.navbar .links li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #538392;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.navbar .links li a:hover::before {
+    height: 100%;
+}
+
+.navbar .links li a:hover {
+    color: #ffffff;
+}
+
+.navbar .links li a:active {
+    transform: scale(0.95);
+}
+
+/* Animation */
+.navbar .links li {
+    animation: floatY 3s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes floatY {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Hide toggle icon and dropdown in full view */
+.navbar .toggle_icon {
+    display: none;
+}
+
+.dropdown {
+    display: none;
+}
+
+/* Mobile Navigation */
+@media (max-width: 650px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .toggle_icon {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    .dropdown {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 20px;
+        top: 60px;
+        width: 200px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .dropdown .links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+    .dropdown .links li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+    .navbar {
+        margin: 5px 10px;
+    }
+}
+
+/* Section 2: Welcome Banner */
+.section-welcome {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cse {
+    text-align: center;
+}
+
+.cse::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 90%;
+    background: #ffffff;
+    animation: blinkcursor 1s steps(3) infinite;
+}
+
+.cse h2 {
+    position: relative;
+    color: black;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    animation: typing 8s steps(29) infinite;
+    overflow: hidden;
+}
+
+.cse .second-line {
+    margin-top: 10px;  /* Space between lines */
+    animation: typing2 8s steps(29) infinite;  /* Separate animation for second line */
+}
+
+@keyframes typing {
+    0%, 90%, 100% {
+        width: 0;
+    }
+    30%, 60% {
+        width: 512px;  /* Adjust based on first line length */
+    }
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 650px) {
+    .cse h2 {
+        font-size: 17px;
+    }
+    
+    @keyframes typing {
+        0%, 90%, 100% {
+            width: 0;
+        }
+        30%, 60% {
+            width: 414px;  /* Adjusted for mobile */
+        }
+    }
+    
+    @keyframes typing2 {
+        0%, 20%, 100% {
+            width: 0;
+        }
+        50%, 80% {
+            width: 300px;  /* Adjusted for mobile */
+        }
+    }
+}
+
+/* Section 3: Main Content */
+.section-content {
+    min-height: 100vh;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.main {
+    font-family: sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    color: black;
+    filter: blur(2px);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.main:hover {
+    filter: blur(0);
+    outline: 2px solid black;
+}
+
+.rating-section {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.rating-section.visible {
+    opacity: 1;
+}
+
+.star-rating {
+    font-size: 2.5rem;
+    color: #ccc;
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+.star-rating .star {
+    transition: color 0.3s ease;
+    padding: 0 5px;
+}
+
+.star-rating .star.selected {
+    color: #FFD700;
+}
+
+/* Reviews Section Styles */
+.reviews-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.reviews-section h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.review-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.reviewer-info h4 {
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.star-display {
+    color: #FFD700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.review-text {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.review-date {
+    color: #999;
+    font-size: 0.8rem;
+    display: block;
+    text-align: right;
+}
+
+/* Section 4: Footer */
+.section-footer {
+    position: relative;
+    min-height: 200px;
+    background: #8a9985;
+    border-radius: 10% 60% 0 0;
+    padding: 50px 20px;
+    transition: background 0.3s;
+}
+
+.section-footer:hover {
+    background: #a3b69d;
+}
+
+.conclude {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.conclude h2 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.conclude .st {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.visit {
+    display: flex;
+    gap: 20px;
+}
+
+.visit a {
+    color: black;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.visit a:hover {
+    color: white;
+}
+
+/* Animations */
+@keyframes blinkcursor {
+    0%, 75% { opacity: 1; }
+    76%, 100% { opacity: 0; }
+}
+
+@keyframes typing {
+    0%, 90%, 100% {
+        width: 0;
+    }
+    30%, 60% {
+        width: 800px;  /* Adjusted width for longer text */
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 650px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .navbar .links {
+        display: none;
+    }
+
+    .navbar .toggle_icon {
+        display: block;
+    }
+
+    .dropdown {
+        display: block;
+        width: 200px;
+        right: 20px;
+    }
+
+    .cse h2 {
+        font-size: 17px;
+    }
+
+    @keyframes typing {
+        0%, 90%, 100% {
+            width: 0;
+        }
+        30%, 60% {
+            width: 500px;  /* Adjusted width for mobile */
+        }
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .section-content {
+        padding: 30px 10px;
+    }
+
+    .rating-section {
+        margin: 30px 10px;
+    }
+
+    .reviews-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .review-card {
+        padding: 15px;
+    }
+
+    .reviews-section h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Complaints Section Styles */
+.complaints-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.complaints-section h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.complaint-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #444;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: black;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background: #ff0000;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: #cc0000;
+}
+
+/* Animation remains the same */
+@keyframes submitPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.submit-btn:active {
+    animation: submitPulse 0.3s ease;
+    background: #990000;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 650px) {
+    .complaints-section {
+        margin: 30px 15px;
+        padding: 20px;
+    }
+
+    .complaints-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px;
+    }
+
+    .submit-btn {
+        padding: 12px 24px;
+    }
+}
+
+/* Add these styles to your existing rating section CSS */
+.feedback-form {
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.feedback-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.feedback-form textarea:focus {
+    border-color: #FFD700;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+.submit-rating {
+    background: #FFD700;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-rating:hover {
+    background: #FFC800;
+    transform: translateY(-2px);
+}
+
+.submit-rating:active {
+    transform: translateY(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 650px) {
+    .feedback-form textarea {
+        padding: 8px;
+    }
+    
+    .submit-rating {
+        width: 100%;
+        padding: 8px 16px;
+    }
+}
+
+/* Add blink animation for navbar */
+@keyframes navbarBlink {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+/* Update dropdown links to match */
+.dropdown .links a {
+    color: black;
+}
+
+.dropdown .links a:active {
+    animation: navItemBlink 0.3s ease;
+    color: grey;
+}
+
+/* Optional: Add a visited state */
+.links a:visited {
+    color: #333;
+}
+
+/* Dropdown specific styles */
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Blink animation for navbar items */
+@keyframes navItemBlink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+#l1, #l2, #l3, #l4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Profile Icon and Dropdown Styles */
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profile-icon i {
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+.profile-icon:hover {
+    background: #538392;
+    transform: translateY(-2px);
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    width: 250px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.profile-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+}
+
+.profile-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.profile-header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-header i {
+    font-size: 3rem;
+    color: #538392;
+}
+
+.profile-info {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-info p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.username {
+    font-weight: bold;
+    color: #538392;
+}
+
+.profile-actions {
+    padding: 15px 20px;
+}
+
+.profile-actions a {
+    display: block;
+    padding: 8px 0;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.profile-actions a:hover {
+    color: #538392;
+}
+
+.logout-link {
+    color: #ff4444 !important;
+}
+
+.logout-link:hover {
+    color: #ff0000 !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .profile-dropdown {
+        width: 200px;
+    }
+    
+    .profile-container {
+        margin-left: auto;
+        margin-right: 1rem;
+    }
+}
+
+/* Try Now Button Styles */
+.try-now-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.try-now-button {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    background: linear-gradient(135deg, #1a75ff, #0052cc);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.try-now-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #0052cc, #003380);
+}
+
+.try-now-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsiveness for Try Now Button */
+@media (max-width: 650px) {
+    .try-now-button {
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+}

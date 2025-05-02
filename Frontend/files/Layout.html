@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CSE</title>
+    <link rel="icon" type="image/png" href="Logo1.png">
+    <link rel="stylesheet" href="Layout.css">
+    <script src="Layout.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+    @keyframes pulseRed {
+      0% { color: #d32f2f; }
+      50% { color: #f15f5f; }
+      100% { color: #ff0000; }
+    }
+    .animated-note {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 8px;
+      color: #ff0000;
+      animation: pulseRed 1.2s infinite;
+    }
+    </style>
+</head>
+<body>
+    <!-- Section 1: Navigation -->
+    <section class="section-nav">
+        <header>
+            <!-- Logo separate from navbar -->
+            <div class="logo">
+                <a href="Layout.html">
+                    <span id="c">E</span>
+                    <i class="fas fa-exclamation-triangle error-icon"></i>
+                    <span id="s">Detector</span>
+                </a>
+            </div>
+
+            <!-- Navbar with links and profile icon -->
+            <div class="navbar">
+                <ul class="links">
+                    <li><a href="1.html">Home</a></li>
+                    <li><a href="Register.html">Register</a></li>
+                    <li><a href="Login.html">Log In</a></li>
+                    <li><a href="#">Complaints</a></li>
+                    <li><a href="#">Learn More</a></li>
+                </ul>
+                
+                <!-- Profile Container integrated inside navbar -->
+                <div class="profile-container">
+                    <div class="profile-icon" onclick="toggleProfileMenu()">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="profile-dropdown">
+                        <div class="profile-header">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="profile-info">
+                            <p class="username">User: Nani_Nobitha</p>
+                            <p class="join-date">Joined: Jan 18 2002</p>
+                        </div>
+                        <div class="profile-actions">
+                            <a href="#" class="profile-link">View Profile</a>
+                            <a href="#" class="logout-link">Logout</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="toggle_icon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </header>
+        <div class="dropdown">
+            <ul class="links">
+                <li><a href="Layout.html" id="home">Home</a></li>
+                <li><a href="Register.html">Register</a></li>
+                <li><a href="Login.html">Log In</a></li>
+                <li><a href="#">Complaints</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 2: Welcome Banner -->
+    <section class="section-welcome">
+        <div class="cse">
+            <h2>Welcome_To_Our_Extension</h2>
+            <!-- Add Try Now Button -->
+            <div class="try-now-container">
+                <button class="try-now-button">Try Now</button>
+            </div>
+            <p class="animated-note">Login before download the extension for Credentials</p>
+        </div>
+    </section>
+
+    <!-- Section 3: Main Content -->
+    <section class="section-content">
+        <div class="main">
+            <span id="l1">Welcome to our Website Extension Error Finder! This tool helps you identify and fix common issues with website extensions.</span>
+            <span id="l2">Our advanced system can detect problems with browser extensions, plugins, and add-ons that might be affecting your website's performance.</span>
+            <span id="l3">Whether you're experiencing compatibility issues, loading errors, or functionality problems, our tool can help diagnose and provide solutions.</span>
+            <span id="l4">Simply input your website URL and let our system analyze your extensions for potential conflicts and optimization opportunities.</span>
+        </div>
+        
+        <!-- Updated Rating Section -->
+        <div class="rating-section">
+            <h3>Rate Your Experience</h3>
+            <div class="star-rating">
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+            </div>
+            <div class="rating-feedback">Click a star to rate</div>
+            
+            <!-- New Feedback Form -->
+            <div class="feedback-form" style="display: none;">
+                <textarea 
+                    id="rating-comment" 
+                    placeholder="Tell us why you gave this rating..."
+                    rows="4"
+                ></textarea>
+                <button type="submit" class="submit-rating">Submit Rating</button>
+            </div>
+        </div>
+
+        <!-- Add this after the rating section -->
+        <div class="reviews-section">
+            <h3>What Users Say About Our Extension</h3>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <img src="https://i.pravatar.cc/50?img=1" alt="Ramu" class="avatar">
+                        <h4>Ramu</h4>
+                    </div>
+                    <div class="star-display">
+                        ★★★★★
+                    </div>
+                    <p class="review-text">"This extension is a game-changer! It automatically detects and fixes website errors. Saved me hours of debugging time."</p>
+                    <span class="review-date">2 days ago</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <img src="https://i.pravatar.cc/50?img=2" alt="Somu" class="avatar">
+                        <h4>Somu</h4>
+                    </div>
+                    <div class="star-display">
+                        ★★★★
+                    </div>
+                    <p class="review-text">"Great tool for web developers. The automation features are incredibly useful. Would recommend for any web project."</p>
+                    <span class="review-date">1 week ago</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <img src="https://i.pravatar.cc/50?img=3" alt="Raju" class="avatar">
+                        <h4>Raju</h4>
+                    </div>
+                    <div class="star-display">
+                        ★★★★★
+                    </div>
+                    <p class="review-text">"The error detection is spot-on! It helped me identify and fix compatibility issues across different browsers."</p>
+                    <span class="review-date">2 weeks ago</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <img src="https://i.pravatar.cc/50?img=4" alt="Rani" class="avatar">
+                        <h4>Rani</h4>
+                    </div>
+                    <div class="star-display">
+                        ★★★★
+                    </div>
+                    <p class="review-text">"User-friendly interface and excellent automation capabilities. Perfect for both beginners and experienced developers."</p>
+                    <span class="review-date">3 weeks ago</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <img src="https://i.pravatar.cc/50?img=5" alt="Vani" class="avatar">
+                        <h4>Vani</h4>
+                    </div>
+                    <div class="star-display">
+                        ★★★★★
+                    </div>
+                    <p class="review-text">"The real-time error detection and automated fixes make this extension invaluable for web development workflows."</p>
+                    <span class="review-date">1 month ago</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Updated Complaints Section without Priority Level -->
+        <div class="complaints-section">
+            <h3>Complaints & Suggestions</h3>
+            <form class="complaint-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select a category</option>
+                        <option value="academic">Academic</option>
+                        <option value="infrastructure">Infrastructure</option>
+                        <option value="faculty">Faculty</option>
+                        <option value="facilities">Facilities</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="5" required 
+                              placeholder="Please describe your complaint or suggestion in detail..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Section 4: Footer -->
+    <section class="section-footer">
+        <footer class="conclude">
+            <div class="in">
+                <h2>RGUKTN</h2>
+                <div class="st">Start Your Learning Right Now</div>
+                <div class="visit">
+                    <a href="https://intranet.rguktn.ac.in/SMS/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+</body>
+</html>
